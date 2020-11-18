@@ -14,7 +14,6 @@ function isolateDuplicates(text) {
     let res = "";
     let count = 0;
     let gthan2 = 0
-    const set = new Set();
     for(let i = 0; i < text.length; i++){
         if(cur !== text[i]){
             if(count > 2) gthan2 += 1;
