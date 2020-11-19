@@ -33,6 +33,4 @@ function isolateDuplicates(text) {
     return [res, gthan2];
 }
 
-isolateDuplicates([])
-// isolateDuplicates("TttTTTTttttTTTTTTIIIIIiiiiiiiSSSSSSSSSTTTTAAAAAAAAAaaaaaaaaaSSSSSSSSSSKKKKKkkkkkk")
-// module.exports = isolateDuplicates;
+module.exports = isolateDuplicates;
