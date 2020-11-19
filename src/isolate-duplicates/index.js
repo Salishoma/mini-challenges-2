@@ -9,13 +9,14 @@ Please also ensure that the input is a string, and return "Please enter a valid 
 */
 
 function isolateDuplicates(text) {
+    if(typeof text !== "string") throw new Error("Please enter a valid string")
     if(!text.length) return ""
     let cur = "";
     let res = "";
     let count = 0;
     let gthan2 = 0
     for(let i = 0; i < text.length; i++){
-        if(cur !== text[i]){
+        if(cur !== text[i].toLowerCase()){
             if(count > 2) gthan2 += 1;
             res = count > 2 ? `${res}]${text[i]}` : `${res}${text[i]}`;
             count = 1;
@@ -23,7 +24,7 @@ function isolateDuplicates(text) {
             res = count === 2 ? `${res}[${text[i]}` : `${res}${text[i]}`;
             count++;
         }
-        cur = text[i];
+        cur = text[i].toLowerCase();
     }
     if(count > 2){
         gthan2 += 1;
@@ -32,4 +33,6 @@ function isolateDuplicates(text) {
     return [res, gthan2];
 }
 
-module.exports = isolateDuplicates;
+isolateDuplicates([])
+// isolateDuplicates("TttTTTTttttTTTTTTIIIIIiiiiiiiSSSSSSSSSTTTTAAAAAAAAAaaaaaaaaaSSSSSSSSSSKKKKKkkkkkk")
+// module.exports = isolateDuplicates;
